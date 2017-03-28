@@ -1,0 +1,20 @@
+default:
+  suites:
+    default:
+      contexts:
+        - FeatureContext
+        - Drupal\DrupalExtension\Context\DrupalContext
+        - Drupal\DrupalExtension\Context\MinkContext
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2:
+        browser: 'chrome'
+      base_url: http://behat.dd:8083
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'drupal'
+      drupal:
+        drupal_root: '/Users/kishi/Sites/devdesktop/behat'
+      region_map:
+        footer: "#footer"
